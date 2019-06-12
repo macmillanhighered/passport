@@ -23,7 +23,7 @@ class AccessToken implements AccessTokenEntityInterface
     public function __construct($userIdentifier, array $scopes = [])
     {
         // $this->setUserIdentifier($userIdentifier);
-        $this->setUserIdentifier(BinHelper::encodeUuid($userIdentifier));
+        $this->setUserIdentifier(BinHelper::decodeUuid($userIdentifier));
 
         foreach ($scopes as $scope) {
             $this->addScope($scope);
