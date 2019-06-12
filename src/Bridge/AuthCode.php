@@ -17,7 +17,7 @@ class AuthCode implements AuthCodeEntityInterface
         parent::setUserIdentifier(BinHelper::encodeUuid($identifier));
     }
     public function getUserIdentifier()
-    {
+    {echo 'test';exit;
         return BinHelper::decodeUuid($this->userIdentifier);
     }
 }
